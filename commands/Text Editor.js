@@ -94,7 +94,7 @@ module.exports = {
             }
 
             if (OptionSelector == "Notepadlol") {
-                Interaction.reply({ embeds: [Class], ephemeral: true })
+                Interaction.reply({ embeds: [Classic_Notepad], ephemeral: true })
             }
         }).catch((err) => {
             console.error(err)
