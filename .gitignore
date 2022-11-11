@@ -1,0 +1,5 @@
+/node_modules/
+/Work in Progress/
+config.json
+package-lock.json
+package.json
