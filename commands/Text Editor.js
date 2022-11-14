@@ -1,8 +1,4 @@
-const { SlashCommandBuilder } = require('discord.js');
-const { EmbedBuilder } = require('discord.js');
-const { ActionRowBuilder } = require('discord.js');
-const { SelectMenuBuilder } = require('discord.js');
-const { ComponentType } = require('discord.js');
+const { SlashCommandBuilder, EmbedBuilder, ActionRowBuilder, SelectMenuBuilder, ComponentType } = require('discord.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -10,7 +6,8 @@ module.exports = {
         .setDescription("If you need a text editor to start coding, here you got"),
 
     async run(Interaction) {
-        
+        var ProfilePhoto = "https://steamuserimages-a.akamaihd.net/ugc/947328169457231320/AEA74DB7BAD24CB9702738DBF1BA515A7F1AE3DC/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false";
+    
         // Links for the user
         const OptionsSelectorEmbed = new EmbedBuilder()
             // .setAuthor({ name: "Concorde", iconURL: "" })
@@ -26,20 +23,22 @@ module.exports = {
             // Embeds (Text editor)
         const VisualStudioCode = new EmbedBuilder()
             .setTitle('Visual Studio Code')
-            .setURL('https://code.visualstudio.com/download;')
+            .setURL('https://code.visualstudio.com/')
             .setColor('Blue')
             .setDescription("If you require a text editor, we give you Visual Studio code and if you need optimization, notepad++")
 
         const Notepad = new EmbedBuilder()
-            .setTitle('Notepad++')
-            .setURL('https://notepad-plus-plus.org/downloads/')
             .setColor('Yellow')
+            .setAuthor({ name: 'Shibacoder', iconURL: ProfilePhoto, value: ' - Notepad++' })
             .setDescription("If you need a optimized text editor, you can chose this one")
+            .setFields(
+               { name: 'Notepad++ - ', value: 'https://notepad-plus-plus.org/downloads/' }
+            )
 
         const VSCode = new EmbedBuilder()
+            .setColor('Blue')
             .setTitle('Visual Studio Code Website')
             .setURL('https://code.visualstudio.com/learn')
-            .setColor('Random')
             .setDescription("Need a to quickly edit a file? Use this IDE inside the web browser. Is Visual Studio Code in the browser.")
         
         const Classic_Notepad = new EmbedBuilder()
@@ -94,7 +93,7 @@ module.exports = {
             }
 
             if (OptionSelector == "Notepadlol") {
-                Interaction.reply({ embeds: [Class], ephemeral: true })
+                Interaction.reply({ embeds: [Classic_Notepad], ephemeral: true })
             }
         }).catch((err) => {
             console.error(err)
