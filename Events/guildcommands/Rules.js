@@ -1,5 +1,5 @@
-const { SlashCommandBuilder, guild_id, EmbedBuilder } = require('discord.js');
-const { TechnologyClubId } = require('../config.json')
+const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
+// const { TechnologyClubId } = require('../config.json')
 
 module.exports = {
     data: new SlashCommandBuilder()

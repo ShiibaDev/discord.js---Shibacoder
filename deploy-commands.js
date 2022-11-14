@@ -4,21 +4,21 @@ const { token, ClientId, TechnologyClubId } = require('./config.json');
 require('dotenv').config();
 const fs = require('node:fs');
 
-const globalcommands = [];
+const commands = [];
 const guildcommands = [];
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
-const guildOnlyCommands = fs.readdirSync('./guildcommands').filter(file => file.endsWith('.js'));
+const guildOnlyCommands = fs.readdirSync('./Events/guildcommands').filter(file => file.endsWith('.js'));
 
 
 // Global
-for (const globalfile of commandFiles) {
-    const gcommand = require(`./commands/${globalfile}`);
-    globalcommands.push(gcommand.data.toJSON());
+for (const file of commandFiles) {
+    const command = require(`./commands/${file}`);
+    commands.push(command.data.toJSON());
 }
 
 // Guild Only
 for (const guildfile of guildOnlyCommands) {
-    const gldcommand = require(`./guildcommands/${guildfile}`);
+    const gldcommand = require(`./Events/guildcommands/${guildfile}`);
     guildcommands.push(gldcommand.data.toJSON());
 }
 
@@ -30,7 +30,7 @@ const rest = new REST({ version: '10' }).setToken(`${token}`);
 
         await rest.put(
             Routes.applicationCommands(ClientId),
-            { body: globalcommands },
+            { body: commands },
         );
 
     try {
