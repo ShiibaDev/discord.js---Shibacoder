@@ -1,5 +1,5 @@
 /node_modules/
 /Work in Progress/
 config.json
-package-lock.json
+pnpm-lock.yaml
 package.json

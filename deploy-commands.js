@@ -1,4 +1,4 @@
-const { Routes, REST, Client } = require('discord.js');
+const { Routes, REST } = require('discord.js');
 const { token, ClientId, TechnologyClubId } = require('./config.json');
 
 require('dotenv').config();
