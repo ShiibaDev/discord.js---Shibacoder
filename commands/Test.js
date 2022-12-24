@@ -1,3 +1,4 @@
+// Function to test code.
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 
 module.exports = {

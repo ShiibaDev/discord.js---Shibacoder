@@ -3,7 +3,7 @@ const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('node')
-        .setDescription('Give you instructions to install npm (node package manager)'),
+        .setDescription('Give you download link for node.js'),
     
     async run(Interaction) {
 
