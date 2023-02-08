@@ -1,5 +1,5 @@
-const { SlashCommandBuilder } = require('discord.js');
-const { EmbedBuilder } = require('discord.js');
+const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
+// const { TechnologyClubId } = require('../config.json')
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -20,6 +20,13 @@ module.exports = {
                 { name: '**3**', value: 'No sobra mencionar seguir los terminos y condiciones de uso de Discord y cada uno de los productos a utilizar que sean mencionados y/o requeridos en los trabajos.' },
                 { name: '**4**', value: 'Simple pero, mayormente se ignora, favor de no abusar de comandos de los bots, ya sea Shibacoder o algun bot oficial.\n A lo que se refier a abusar es el spam de comandos en un canal y el mal uso de estos.' }
             )
-        await Interaction.reply({ embeds: [RulesEmbed] });
+
+        // const ErrorEmbed = new EmbedBuilder()
+        //     .setColor('Red')
+        //     .setAuthor({ name: 'Shibacoder', iconURL: ProfilePhoto })
+        //     .setTitle('Not Compatibility')
+        //     .setDescription('Este no es el servidor para las reglas que estan escritas.')
+
+        await Interaction.reply({ embeds: [RulesEmbed] })
     }
 }
